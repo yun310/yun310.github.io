@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>任务二：零基础HTML及CSS编码（一）</title>
+    <style>
+        /* 设置body区域样式 */
+        body {
+            margin: 2px;
+            padding: 0;
+        }
+        /* 设置page区域样式 */
+        #page {
+            background-color: rgb(222, 222, 222);
+        }
+        /* 设置header区域样式 */
+        #page>header {
+            background-color: rgb(51, 51, 51);
+        }
+        #page>header>#logo {
+            display: inline-block;
+            padding: 8px 40px;
+        }
+        #page>header>nav {
+            float: right;
+            margin: 2px 26px;
+        }
+        #page>header>nav>ul>li {
+            float: left;
+            margin: 0 0 0 28px;
+        }
+        #page>header>nav>ul>li>a {
+            color: rgb(255, 255, 255);
+            font-size: 13px;
+            font-family: "微软雅黑", sans-serif;
+            text-decoration: none;
+        }
+        #page>header>nav>ul>li>a.gray-font {
+            color: rgb(222, 222, 222);
+        }
+        /* 设置footer区域 */
+        #page>footer {
+            background-color: rgb(0, 0, 0);
+        }
+        #page>footer>p {
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-family: "微软雅黑", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px 0 40px;
+        }
+        /* 设置main区域样式 */
+        #page>main>article {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 1px rgb(132, 132, 132);
+        }
+        #page>main>article>header>h2 {
+            font-size: 26px;
+            font-family: "宋体", serif;
+        }
+        #page>main>article>header>h3 {
+            color: rgb(120, 120, 120);
+            font-size: 20px;
+            font-family: "宋体", serif;
+        }
+        #page>main>article>header>p {
+            color: rgb(120, 120, 120);
+            font-size: 14px;
+            font-family: "宋体", serif;
+        }
+        #page>main>article>p {
+            font-size: 16px;
+            font-family: "微软雅黑", sans-serif;
+            text-indent: 2em;
+        }
+        #page>main>article>p a {
+            color: rgb(0, 0, 255);
+        }
+        #page>main>article>ul {
+            padding: 0;
+            list-style: none;
+        }
+        #page>main>article>ul>li {
+            padding: 5px 30px;
+        }
+        #page>main>article>div>figure {
+            display: inline-block;
+            height: 148px;
+            margin-top: 0;
+            border: 1px solid rgb(200, 200, 200);
+        }
+        #page>main>article>div>figure>figcaption {
+            text-align: center;
+            margin: 10px 0 0;
+            font-size: 14px;
+            line-height: 14px;
+            font-family: "微软雅黑", sans-serif;
+        }
+        #page>main>article>div>figure>img {
+            margin: 12px;
+            height: 100px;
+        }
+        #page>main>article>table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid rgb(204, 204, 204);
+        }
+        #page>main>article>table>caption {
+            text-align: left;
+        }
+        #page>main>article>table th {
+            border: 1px solid rgb(204, 204, 204);
+            background-color: rgb(51, 51, 51);
+            text-align: left;
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-family: "微软雅黑", sans-serif;
+            padding: 6px;
+        }
+        #page>main>article>table td {
+            border: 1px solid rgb(204, 204, 204);
+            font-size: 14px;
+            font-family: "微软雅黑", sans-serif;
+            padding: 6px;
+        }
+        #page>main>article>table>tfoot {
+            background-color: rgb(204, 204, 204);
+            font-weight: bold;
+            font-size: 14px;
+            font-family: "微软雅黑", sans-serif;
+            padding: 6px;
+        }
+        /* 设置aside区域样式 */
+        #page>aside {
+            margin: 40px 20px 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 1px rgb(132, 132, 132);
+        }
+        #page>aside>header>h2 {
+            font-size: 18px;
+            font-family: "微软雅黑", sans-serif;;
+        }
+        #page>aside>div>form>table {
+            margin: 0 0 0 285px;
+        }
+        .left {
+            text-align: right;
+            padding: 10px 0 0 0;
+        }
+        .right {
+            padding: 10px 0 0 14px;
+        }
+        .gray-font {
+            color: rgb(118, 118, 118);
+            font-size: 15px;
+            font-family: "微软眼黑", sans-serif;
+            padding-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            width: 100%;
+            background-color: rgb(51, 85, 208);
+            border-radius: 5px;
+            border: none;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            line-height: 40px;
+            font-family: "微软雅黑", sans-serif;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <div id="logo">
+                <img src="../img/logo.png" alt="百度Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">导航链接一</a></li>
+                    <li><a href="#">导航链接二</a></li>
+                    <li><a href="#">导航链接三</a></li>
+                    <li><a href="#" class="gray-font">导航链接四</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <header>
+                    <h2>文章一级标题</h2>
+                    <h3>文章二级标题</h3>
+                    <p>文章作者 文章发表时间</p>
+                </header>
+                <p>
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，换行了<br />
+                    这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>
+                    这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有一个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+                </p>
+                <img src="../img/picture.png" alt="这是一张测试图片" />
+                <p>
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有一个粗体字</strong>
+                    这是一个很长很长的段落，这是一个很长很长的段落，
+                    <a target="_blank" href="http://ife.baidu.com">这里有一个链接点击后打开新窗口链接到http://ife.baidu.com</a>
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落。
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h2>另一篇文章一级标题</h2>
+                    <h3>文章二级标题</h3>
+                    <p>文章作者 文章发表时间</p>
+                </header>
+                <p>
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />
+                    这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>
+                    这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有一个粗体字</strong>这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+                    这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+                </p>
+                <img src="../img/picture.png" alt="这是一张测试图片" />
+                <ul>
+                    <li>列表项目一</li>
+                    <li>列表项目二</li>
+                    <li>列表项目三</li>
+                </ul>
+            </article>
+            <article>
+                <header>
+                    <h2>图片</h2>
+                </header>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <figcaption>好看的图片</figcaption>
+                        <img src="../img/picture.png" alt="这是一个测试图片" />
+                    </figure>
+                </div>
+            </article>
+            <article>
+                <header>
+                    <h2>最后一篇文章一级标题</h2>
+                    <h3>文章二级标题</h3>
+                    <p>文章作者 文章发表时间</p>
+                </header>
+                <ol>
+                    <li>排名1</li>
+                    <li>排名2</li>
+                    <li>排名3</li>
+                </ol>
+                <table>
+                    <caption>下面是一个表格，我这里给表格加了一个border="1"好让你看出是一个表格，你们写html时不需要加</caption>
+                    <thead>
+                        <tr><th>表头</th><th>表头</th><th>表头</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>表内容单元格</td><td>表内容单元格</td><td><a href="#">操作</a></td></tr>
+                        <tr><td>表内容单元格</td><td>表内容单元格</td><td><a href="#">操作</a></td></tr>
+                        <tr><td>表内容单元格</td><td>表内容单元格</td><td><a href="#">操作</a></td></tr>
+                        <tr><td>表内容单元格</td><td>表内容单元格</td><td><a href="#">操作</a></td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td>总计</td><td colspan="2">1000</td></tr>
+                    </tfoot>
+                </table>
+            </article>
+        </main>
+        <aside>
+            <header>
+                <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+            </header>
+            <div id="login-box">
+                <form action="#" method="post">
+                    <table>
+                        <tr>
+                            <td class="left"><label>请输入邮箱地址</label></td>
+                            <td class="right"><input type="email" placeholder="这是一个文本输入框" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="right gray-font">邮箱地址请按要求格式输入</td>
+                        </tr>
+                        <tr>
+                            <td class="left"><label>请输入密码</label></td>
+                            <td class="right"><input type="password" placeholder="这是一个文本输入框" /></td>
+                        </tr>
+                        <tr>
+                            <td class="left"><label>请重复输入密码</label></td>
+                            <td class="right"><input type="password" placeholder="这是一个文本输入框" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="right gray-font">密码请为6-16位英文数字</td>
+                        </tr>
+                        <tr>
+                            <td class="left"><label>性别</label></td>
+                            <td class="right">
+                                <input type="radio" name="sex" value="male" checked="checked" />男
+                                <input type="radio" name="sex" value="female" />女
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left"><label>城市</label></td>
+                            <td class="right">
+                                <select>
+                                    <option value="天津">天津</option>
+                                    <option value="北京" selected="selected">北京</option>
+                                    <option value="河北">河北</option>
+                                    <option value="济南">济南</option>
+                                    <option value="浙江">浙江</option>
+                                    <option value="甘肃">甘肃</option>
+                                    <option value="河南">河南</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left"><label>爱好</label></td>
+                            <td class="right">
+                                <input type="checkbox" name="hobby" value="sport" />运动
+                                <input type="checkbox" name="hobby" value="art" />艺术
+                                <input type="checkbox" name="hobby" value="science" />科学
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td class="left"><label>个人描述</label></td>
+                            <td class="right"><textarea cols="96" rows="5">这是一个多行输入框，输入您的个人描述</textarea></td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="button" value="确认提交" />
+                </form>
+            </div>
+        </aside>
+        <footer>
+            <p>版权所有&copy;</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+    Status API Training Shop Blog About 
+
+    © 2016 GitHub, Inc. Terms Privacy Security Contact Help 
+

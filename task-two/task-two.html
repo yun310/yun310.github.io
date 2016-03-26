@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>任务二：零基础HTML及CSS编码(一)</title>
+	<style type="text/css">
+	/* 设置body 区域样式*/
+	body{
+		margin: 2px;
+		padding: 0;
+	}
+	/* 设置page区域样式*/
+	#page{
+		background-color: rgb(222,222,222);
+	}
+	/* 设置header区域样式*/
+	#page>header{
+		background-color: rgb(51,51,51);
+	}
+	#page>header>#logo{
+		display: inline-block;
+		padding: 5px 20px;
+	}
+	#page>header>nav{
+		float: right;
+		margin: 10px 26px;
+	}
+	#page>header>nav>ul>li{
+		float: left;
+		margin: 0 0 0 28px;
+	}
+	#page>header>nav>ul>li>a{
+		color: rgb(255,255,255);
+		font-size: 13px;
+	}
+	#page>header>nav>ul>li>a.gray-font{
+		color: rgb(220,220,220);
+	}
+	/*设置main区域样式 */
+	#page>main>article{
+		margin: 30px;
+		padding: 20px;
+		background-color: rgb(255,255,255);
+		box-shadow: 2px 2px 1px rgb(132,132,132);     /* 盒子阴影，显示立体效果*/
+	}
+	#page>main>article>header>h2{
+		font-size: 26px;
+		font-family: "宋体",serif;
+	}
+	#page>main>article>header>h3{
+		color: rgb(120,120,120);
+		font-size: 20px;
+		font-family: "宋体",serif;
+	}
+	#page>main>article>header>p{
+		color: rgb(120,120,120);
+		font-size: 14px;
+		font-family:"宋体",serif;
+	}
+	#page>main>article>p{
+		font-size: 16px;
+		font-family: "微软雅黑",sans-serif;
+		text-indent: 2em;  /* 段落前缩进*/
+	}
+	#page>main>article>p a{
+		color: rgb(0,0,255);
+	}
+	#page>main>article>ul{
+		padding: 0;
+		list-style: none;
+	}
+	#page>main>article>ul>li{
+		padding: 5px 30px;
+	}
+	#page>main>article>ol{
+		padding: 0px;
+	}
+	#page>main>article>ol>li{
+		margin: 5px 0 5px 28px;
+		font-size: 16px;
+		line-height: 14px;
+		font-family: "微软雅黑",sans-serif;
+	}
+	#page>main>article>div>figure{
+		display: inline-block;
+		height: 240px;
+		margin-top: 0;;
+		border: 1px solid rgb(200,200,200);
+		text-align: center;
+	}
+	#page>main>article>div>figure>p{
+		text-align: center;
+		margin: 20px 40px 0px;
+		font-size: 14px;
+		line-height: 15px;
+		font-family: "微软雅黑",sans-serif;
+	}
+	#page>main>article>div>figure>img{
+		margin: 4px;
+	}
+	#page>main>article>table{
+		width: 100%;
+		border-collapse: collapse;
+		border: 1px solid rgb(204,204,204);
+	}
+	#page>main>article>table>tbody>tr{
+		border: 1px solid rgb(204,204,204);
+	}
+	#page>main>article>table>thead>tr>th{
+		text-align: left;
+		border: 1px solid rgb(204,204,204);
+		background-color: rgb(51,51,51);
+		color: rgb(255,255,255);
+		font-family: "微软雅黑" ,sans-serif;
+	}
+	#page>main>article>table>tr>td {
+		border: 1px solid rgb(204,204,204)
+		text-align:left;
+		font-weight: bold;
+		font-size: 14px;
+		font-family: "微软雅黑" ,sans-serif;
+		padding: 8px;
+	}
+	#page>main>article>table>tfoot>tr>td {
+		background-color: rgb(204,204,204);
+		text-align: left;
+		font-weight: bold;
+		font-size: 14px;
+		font-family: "微软雅黑",sans-serif;
+		padding: 6px;
+	}
+	#page>main>article>table>caption{
+		text-align: left;
+	}
+	/* 设置aside区域样式 */
+	#page>aside{
+		margin-right: 50px;
+		margin-left: 30px;
+		margin-bottom: 20px;
+		padding: 20px;
+		background-color: rgb(255,255,255);
+		box-shadow: 2px 2px 1px rgb(132,132,132)
+	}
+	#page>aside>header{
+		font-size: 13px;
+		font-family: "微软雅黑" ,sans-serif;
+	}
+	#page>aside>#login_box>form table{
+		display: inline-block;   
+		padding-left: 300px;   
+		font-size: 15px;
+	}
+	#page>aside>#login_box>form input[type="submit"]{
+		display: inline-block;
+		width: 100%;     /* 填充整个页面*/
+		padding: 8px 8px;  /*  盒子中间字体上下宽度*/
+		background-color: rgb(51,85,208);  /* 盒子背景颜色*/
+		border-radius: 10px;  /* 改变盒子边角形状为椭圆 */
+		border: none;  /*去除边界阴影 */
+		font-weight: bold; /*  字体加粗*/
+		color: rgb(255,255,255); /* 改变字体颜色*/
+		font-size:15px;  /* 字体大小*/
+		line-height: 30px; /* 设置字体行高，也可以整体改变字体和盒子间的上下高度*/
+			/* 这里其实和padding的效果一样，可以不用重复设置*/
+		margin-top: 10px;	/* 和上面的隔10px*/
+		cursor: pointer;   /* 改变鼠标指针为手的形状，学习了 */
+	}
+	#page>aside>#login_box>form input[type="radio"]{
+		display: inline-block;
+		background-color: rgb(51,85,208);
+	}
+	#page>aside>#login_box>form textarea {
+		font-size:  16px;
+		font-weight: bold;   
+	}
+	.table_one{
+		text-align: right;   /*  设置表格右对齐*/
+		padding-right: 8px;  /*  右对齐空出几格*/
+	}
+	.font_color{
+		color: rgb(120,120,120);
+		font-size: 12px;
+		padding-bottom: 10px;
+		margin-bottom: 5px
+	}
+
+	#page>abbr{
+		display: inline-block;
+		width: 100%;
+		background-color: rgb(0,0,0);
+		color: rgb(255,255,255);
+		padding: 20px;
+		margin-top: 2px;
+		text-align: center;
+		font-size: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id="page">
+		<header>
+			<div id="logo">
+				 <img src="baidu_logo.png" alt="baidu百度" width="150px" height="50px"> 
+			</div>
+			<nav>
+				<ul>
+					<li><a href="http://ife.baidu.com">导航链接一</a></li>
+					<li><a href="http://ife.baidu.com">导航链接二</a></li>
+					<li><a href="http://ife.baidu.com">导航链接三</a></li>
+					<li><a href="http://ife.baidu.com" class="gray-font">导航链接四</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>	
+			<article>
+				<header>
+					<h2>文章一级标题</h2>
+					<h3>文章二级标题</h3>
+					<p>文章作者&nbsp;&nbsp;文章发表时间</p>
+				</header>
+				<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落 ,这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 </p>
+				<img src="1.jpeg" width="300px" height="200px">
+				<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" target="_bink">这里有一个链接点击后打开新窗口链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落 ,这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 </p>
+			</article>
+			<article>
+				<header>
+					<h2>另一篇文章一级标题</h2>
+					<h3>文章二级标题</h3>
+					<p><span>文章作者&nbsp;&nbsp;文章发表时间</span></p>
+				</header>
+				<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br>这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落 ,这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 这是一个很长很长的段落 </p>
+				<img src="1.jpeg" width="300px" height="200px">
+				<ul>
+					<li>列表项目一</li>
+					<li>列表项目二</li>
+					<li>列表项目三</li>
+				</ul>
+			</article>
+			<article>
+				<h2>图片</h2>
+				<div>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+					<br>
+					<figure>
+						<p id="pig">好看的图片</p>
+						<img src="1.jpeg" width="300px" height="200px">
+					</figure>
+				</div>
+				
+			</article>
+			<article>
+				<header>
+					<h2>最后一篇文章一级标题</h2>
+					<h3>文章二级标题</h3>
+					<p><span>文章作者&nbsp;&nbsp;文章发表时间</span></p>
+				</header>
+				<ol>
+					<li>排名一</li>
+					<li>排名二</li>
+					<li>排名三</li>
+				</ol>
+				<table border="1">
+					<caption>下面是一个表格，给表格加了一个border="1"好让你看出是一个表格</caption>
+					<thead>
+						<tr>
+							<th>表头</th>
+							<th>表头</th>
+							<th>表头</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>表内单元格</td>
+							<td>表内单元格</td>
+							<td><a href=">">操作</a></td>
+						</tr>
+						<tr>
+							<td>表内单元格</td>
+							<td>表内单元格</td>
+							<td><a href=">">操作</a></td>
+						</tr>
+						<tr>
+							<td>表内单元格</td>
+							<td>表内单元格</td>
+							<td><a href=">">操作</a></td>
+						</tr>
+						<tr>
+							<td>表内单元格</td>
+							<td>表内单元格</td>
+							<td><a href=">">操作</a></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td>总计</td>
+							<td colspan="2">1000</td>
+						</tr>
+					</tfoot>
+				</table>
+			</article>
+		</main>
+		<aside>
+			<header>
+				<h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+			</header>
+			<div  id="login_box">
+				<form>
+					<table>
+						<tr>
+							<td class="table_one"><label>请输入邮箱地址</label></td>
+							<td><input type="email" placeholder="这是一个文本框"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="font_color"><p>邮箱地址请按要求格式输入</p></td>
+						</tr>
+						<tr>
+							<td class="table_one"><label>请输入密码</label></td>
+							<td><input type="password" placeholder="这是一个文本输入框"></td>
+						</tr>
+						<tr>
+							<td class="table_one"><label>请重复输入密码</label></td>
+							<td><input type="password" placeholder="这是一个文本输入框"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="font_color"><p>密码请为6-16位英文数字</p></td>
+						</tr>
+						<tr>
+							<td class="table_one"><label>性别</label></td>
+							<td><input type="radio" name="sex" checked="checked"/>男
+					<input type="radio" name="sex" class="button_color"/>女</td>
+						</tr>
+						<tr>
+							<td class="table_one"><label>城市</label></td>
+							<td>
+								<select>
+								<option>长沙</option>
+								<option selected>北京</option>
+								<option>深圳</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+								<td class="table_one"><label>爱好</label></td>
+								<td>
+									<input type="checkbox" name="checkbox1" value="运动">运动
+									<input type="checkbox" name="checkbox2" value="艺术">艺术
+									<input type="checkbox" name="checkbox3" value="科学">科学
+								</td>	
+						</tr>
+						<tr>
+							<td class="table_one"><label>个人描述</label></td>
+							<td>
+								<textarea cols="80" row="20">这是一个多行输入框，输入您的个人描述</textarea>
+							</td>
+						</tr>
+					</table>
+					<input type="submit" value="确认提交">
+				</form>
+			</div>
+		</aside>
+		<abbr>版权所有&copy;</abbr>
+	</div>
+</body>
+</html>

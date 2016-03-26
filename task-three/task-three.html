@@ -1,0 +1,85 @@
+<!DCOTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" >
+		<title>任务三：三栏式布局</title>
+		<style type="text/css">
+		body{
+			background-color: rgb(0,0,0);
+			padding: 0px;
+		}
+		#page{
+			width: 800px;
+			height: 500px;
+			border: 1px solid rgb(120,120,120);
+			padding: 20px;
+			background-color: #eee;
+			margin-left: 250px;
+			margin-top: 0px;
+		}
+		#logo{
+			display: inline-block;
+			border: 1px solid rgb(120,120,120);
+			background-color: rgb(255,255,255);
+			height: 120px;
+			width: 150px;
+			padding: 10px;
+			margin-right: 10px;
+			float: left;
+		}
+		.pigure{
+			display: inline-block;
+			border: 1px solid rgb(120,120,120);
+			margin-bottom: 3px;
+			margin-left: 16px;	
+		}
+		#logo>h2{
+			font-size: 13px;
+			float: right;
+		}
+		#middle{
+			display: inline-block;
+			border: 1px solid rgb(120,120,120);
+			background-color: rgb(255,255,255);
+			max-width: 450px;
+			float: center;
+		}
+		#right{
+			display: inline-block;
+			padding: 10px;
+			border: 1px solid rgb(120,120,120);
+			width: 120px;
+			background-color: rgb(255,255,255);
+			float: right;
+		}
+		p {
+			text-indent: 2em;
+			font-size: 15px;
+			padding: 10px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<div id="logo">
+				<img  src="logo.jpg" with="80px" height="80px">
+				<h2>望楼小分队</h2>
+			</div>
+			<div id="right">
+				<div >
+					<img class="pigure" src="me.jpeg" width="80px" height="80px">
+					<img class="pigure" src="guangguang.jpg" width="80px" height="80px">		
+					<img class="pigure" src="xixi.jpeg" width="80px" height="80px">
+					<img class="pigure" src="huahua.jpg" width="80px" height="80px">
+				</div>
+			</div>
+			<div id="middle">
+				<h2>sim-望楼小分队</h2>
+				<p>one girl and two boy</p>
+				<p>The default positioning for all elements is position:static, which means the element is not positioned and occurs where it normally would in the document.Normally you wouldn't specify this unless you needed to override a positioning that had been previously set.ne girl and two boy</p>
+				<p>The default positioning for all elements is position:static, which means the element is not positioned and occurs where it normally would in the document.Normally you wouldn't specify this unless you needed to override a positioning that had been previously setne girl and two boy</p>
+				<p>The default positioning for all elements is position:static, which means the element is not positioned and occurs where it normally would in the document.Normally you wouldn't specify this unless you needed to override a positioning that had been previously set</p>
+			</div>	
+		</div>
+	</body>
+</html>
